@@ -7,9 +7,9 @@ let validateSession = require("../middleware/validate-session");
 
 router.post("/create", (req, res) => {
     Log.create({
-        description: req.body.description,
-        definition: req.body.definition,
-        result: req.body.result,
+        description: req.body.log.description,
+        definition: req.body.log.definition,
+        result: req.body.log.result,
         owner_id: req.user.id
     })
     .then(log => res.status(200).json(log))
@@ -32,9 +32,9 @@ router.delete("/:id", function (req, res) {
 
 router.put("/:id", function (req, res) {
     const updateLog = {
-        description: req.body.description,
-        definition: req.body.definition,
-        result: req.body.result
+        description: req.body.log.description,
+        definition: req.body.log.definition,
+        result: req.body.log.result
     };
     
     const query = {where: {id: req.params.id}};

@@ -1,13 +1,15 @@
 const express = require("express");
 const app = express();
 const sequelize = require("./db");
-app.use(express.json());
 
 const user = require("./controllers/user-controller");
 const log = require("./controllers/log-controller")
 
 sequelize.sync();
 //sequelize.sync({force: true});
+
+app.use(express.json());
+
 app.use(require("./middleware/headers"));
 
 
