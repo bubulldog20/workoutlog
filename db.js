@@ -12,7 +12,7 @@ const sequelize = new Sequelize(
 
 sequelize.authenticate().then(
   function () {
-    console.log("Connected to blue-server-challenges postgres database!");
+    console.log("Connected to workoutlog postgres database!");
   },
   function (err) {
     console.log(err);
