@@ -16,7 +16,7 @@ router.post("/create", (req, res) => {
     .catch(err => res.status(500).json({error: err}))
 });
 
-router.get("/", (req, res) => {
+router.get("/:id", (req, res) => {
     Log.findAll()
     .then((log) => res.status(200).json({log}))
     .catch(err => res.status(500).json({error: err}))
